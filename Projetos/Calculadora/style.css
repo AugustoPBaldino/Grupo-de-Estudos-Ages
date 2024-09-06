@@ -19,7 +19,7 @@
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
   }
   
-  .grid-container > button {
+  .grid-container button {
     cursor: pointer;
     font-size: 2rem;
     border: none;
@@ -28,12 +28,12 @@
     color: #eee;
   }
   
-  .grid-container > button:hover {
+  .grid-container button:hover {
     background-color: #eee;
     color: #111;
   }
   
-  .grid-container > .operator {
+  .grid-container .operator {
     background: #41b88375;
   }
   
@@ -41,7 +41,7 @@
     grid-column: span 2;
   }
   
-  .grid-container > .output {
+  .grid-container .output {
     grid-column: 1 / -1;
     background: #222;
     display: flex;
@@ -53,12 +53,12 @@
     word-break: break-all;
   }
   
-  .grid-container > .output > .previous-operand {
+  .grid-container .output .previous-operand {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
   }
   
-  .grid-container > .output > .current-operand {
+  .grid-container .output .current-operand {
     color: white;
     font-size: 2.5rem;
   }
