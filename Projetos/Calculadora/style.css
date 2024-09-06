@@ -7,7 +7,7 @@
   }
   
   body {
-    background: linear-gradient(to right, #233329, #249abb);
+    background: linear-gradient(to right, #3a9eac, #249abb);
   }
   
   .grid-container {
@@ -33,13 +33,8 @@
     color: #111;
   }
   
-<<<<<<< HEAD
   .grid-container .operator {
-    background: #41b88375;
-=======
-  .grid-container > .operator {
     background: #249abb;
->>>>>>> fd78585e99aedcc4a9fbc6fd9948905b41fb42f9
   }
   
   .span-two {

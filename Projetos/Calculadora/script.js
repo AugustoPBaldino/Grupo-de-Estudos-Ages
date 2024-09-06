@@ -7,12 +7,14 @@ const previousOperandTextElement = document.querySelector("[data-previous-operan
 const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
 class Calculator {
+  // Construtor
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement;
     this.currentOperandTextElement = currentOperandTextElement;
     this.clear();
   }
 
+  // Responsável pela formatação dos números
   formatDisplayNumber(number) {
     const stringNumber = number.toString();
 
@@ -36,10 +38,13 @@ class Calculator {
     }
   }
 
+  // Deleta último dígito
   delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
+
+  // Executar operações de cálculo
   calculate() {
     let result;
 
@@ -70,6 +75,7 @@ class Calculator {
     this.previousOperand = "";
   }
 
+  //Determinar operador escolhido para a função para calcular ser executada
   chooseOperation(operation) {
     if (this.currentOperand === "") return;
 
@@ -83,18 +89,21 @@ class Calculator {
     this.currentOperand = "";
   }
 
+  //Coloca número na "Telinha"
   appendNumber(number) {
     if (this.currentOperand.includes(".") && number === ".") return;
 
     this.currentOperand = `${this.currentOperand}${number.toString()}`;
   }
 
+  //Limpa todas as operações 
   clear() {
     this.currentOperand = "";
     this.previousOperand = "";
     this.operation = undefined;
   }
 
+  //Atualiza tela com números e operadores
   updateDisplay() {
     this.previousOperandTextElement.innerText = `${this.formatDisplayNumber(
       this.previousOperand
@@ -105,11 +114,13 @@ class Calculator {
   }
 }
 
+//Instância do objeto da calculadora
 const calculator = new Calculator(
   previousOperandTextElement,
   currentOperandTextElement
 );
 
+//Laço que recebe números que ao clicar são atualizados na telinha
 for (const numberButton of numberButtons) {
   numberButton.addEventListener("click", () => {
     calculator.appendNumber(numberButton.innerText);
@@ -117,6 +128,7 @@ for (const numberButton of numberButtons) {
   });
 }
 
+//Recebe operadores
 for (const operationButton of operationButtons) {
   operationButton.addEventListener("click", () => {
     calculator.chooseOperation(operationButton.innerText);
@@ -124,16 +136,19 @@ for (const operationButton of operationButtons) {
   });
 }
 
+// função de evento limpar a tela
 allClearButton.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
 });
 
+//Função do botão igual
 equalsButton.addEventListener("click", () => {
   calculator.calculate();
   calculator.updateDisplay();
 });
 
+//Função de deletar
 deleteButton.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
