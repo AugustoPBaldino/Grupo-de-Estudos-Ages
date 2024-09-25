@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    background-color: rgba(58, 114, 95, 0.384);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    padding: 5%;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.329);
+    z-index: -1;
+}
+
+body::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px);
+    z-index: -2;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.header h1 {
+    margin: 0;
+    font-family: 'Nunito';
+    color: #F7F7F7;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    height: 44px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin: 30px auto
+}
+
+.search-bar input {
+    font-family: 'Nunito';
+    font-size: larger;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.middle h1 {
+    margin: 0;
+    font-weight: bold;
+    color: #F7F7F7;
+    font-family: 'Nunito';
+    font-size: 2vw;
+    padding: 10px;
+}
+
+#current-temperature {
+    font-weight: bold;
+    color: #F7F7F7;
+    font-family: 'Nunito';
+    font-size: 2.5vw;
+    padding: 10px;
+}
+
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 5vh;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.card {
+    width: 30%;
+    max-width: 150px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card p {
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: 'Nunito';
+    color: #F7F7F7;
+    margin: 0;
+    padding: 5px;
+}
+
+.background-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 30px;
+    background-color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.background-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .header h1,
+    .middle h1,
+    .card p {
+        font-size: 5vw;
+    }
+}
